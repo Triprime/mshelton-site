@@ -1,32 +1,26 @@
+<h1>Matt's Rockin' Website</h1>
 <%= render 'layouts/navigation_bar' %>
-<h1>My Rockin' Blog Posts</h1>
-
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Published at</th>
-    <th>Featured</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.author %></td>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
-    <td><%= post.published_at %></td>
-    <td><%= post.featured %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div>
+    <h2> <%= post.title %> </h2>
+    <%= post.author %>
+    <br>  
+    <%= post.published_at %>
+    <br>
+    <%= post.body %>
+    <br>
+    Featured: <%= post.featured %>
+    <br>
+    <%= link_to 'Show', post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br><br>
+</div>
 <% end %>
-</table>
 
 <br />
 
+<div>
 <%= link_to 'New Post', new_post_path %>
+</div>
