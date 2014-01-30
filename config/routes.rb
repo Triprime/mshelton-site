@@ -1,8 +1,17 @@
 MsheltonSite::Application.routes.draw do
+
+  #get | post | put | patch | delete
+
+  root to: "static_pages#home"
   resources :posts
 
-  root to: "posts#index"
-
+  #get "/url-path", to: "controller#action", as: :url_path_name"
+  #this is Rails 3 syntax only
+  get "/home", to: "static_pages#home", as: :home
+  get "/about", to: "static_pages#about", as: :about
+  get "/gallery", to: "static_pages#gallery", as: :gallery
+  get "/posts", to: "posts#index", as: :posts
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

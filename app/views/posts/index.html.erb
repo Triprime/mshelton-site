@@ -1,9 +1,18 @@
-<h1>Matt's Rockin' Website</h1>
-<%= render 'layouts/navigation_bar' %>
+<h2>My amazing blog!</h2>
+
+<nav>
+<div class="wrapper">
+    <ul class="menu" rel="sam1">
+        <li class="item"> <%= link_to 'New Post', new_post_path %> </li>
+    </ul>    
+</div>
+</nav>
+
 
 <% @posts.each do |post| %>
-<div>
-    <h2> <%= post.title %> </h2>
+
+<div class="post">
+    <h1> <%= post.title %> </h1>
     <%= post.author %>
     <br>  
     <%= post.published_at %>
@@ -19,8 +28,4 @@
 </div>
 <% end %>
 
-<br />
 
-<div>
-<%= link_to 'New Post', new_post_path %>
-</div>

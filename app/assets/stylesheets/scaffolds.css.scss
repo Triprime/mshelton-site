@@ -1,15 +1,32 @@
-html {
-  background-color: #4682b4;
-  margin-left:auto;
-  margin-right:auto;
-}
 
-nav {
-  margin-left:auto;
-  margin-right:auto;
+html{
+  min-height: 100%
+}
+.container {
+  background-color: transparent;
+  border: none;
+  border-radius: 0px;
+  position:relative;
+  width:100%;
 }
 
 body {
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background: #002400; /* Old browsers */
+  background: -moz-linear-gradient(top,  #002400 0%, #005700 31%, #008a00 51%, #52b152 69%, #83c783 83%, #b4ddb4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#002400), color-stop(31%,#005700), color-stop(51%,#008a00), color-stop(69%,#52b152), color-stop(83%,#83c783), color-stop(100%,#b4ddb4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #002400 0%,#005700 31%,#008a00 51%,#52b152 69%,#83c783 83%,#b4ddb4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #002400 0%,#005700 31%,#008a00 51%,#52b152 69%,#83c783 83%,#b4ddb4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #002400 0%,#005700 31%,#008a00 51%,#52b152 69%,#83c783 83%,#b4ddb4 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #002400 0%,#005700 31%,#008a00 51%,#52b152 69%,#83c783 83%,#b4ddb4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002400', endColorstr='#b4ddb4',GradientType=0 ); /* IE6-9 */
+
+
+  margin-left:auto;
+  margin-right:auto;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -20,14 +37,30 @@ div{
   background-color: #F0F8FF;
   width: 70%;
   border:2px solid;
-  border-radius:25px;
+  border-radius:10px;
   text-align: center;
   margin-left:auto;
   margin-right:auto;
 }
 
+.footer {
+  text-shadow: 2px 2px black;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  border: none;
+  background-color: transparent;
+  color: #F0F8FF;
+}
+
 h1{
   text-align: center;
+}
+
+h2{
+  color: #F0F8FF;
+  text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 p, ol, ul, td {
@@ -37,11 +70,11 @@ p, ol, ul, td {
   background-color: #F0F8FF;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+// pre {
+//   background-color: #eee;
+//   padding: 10px;
+//   font-size: 11px;
+// }
 
 a {
   color: #000;
@@ -62,6 +95,8 @@ div {
 }
 
 #notice {
+  width: 100%;
+  text-align: center;
   color: green;
 }
 
@@ -72,14 +107,14 @@ div {
 }
 
 #error_explanation {
-  width: 450px;
+  width: 100%;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
   h2 {
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;

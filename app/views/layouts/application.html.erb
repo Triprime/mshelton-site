@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>MsheltonSite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>MsheltonSite</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
+  <body>
+    
+    <%= render 'layouts/navigation_bar' %>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
-<footer>
-  <p>&copy;<%= Time.now.year %>, Matt Shelton</p>
-</footer>
+  <footer>
+    <p class="footer">&copy;<%= Time.now.year %>, Matt Shelton</p>
+  </footer>
+
+  </body>
 </html>

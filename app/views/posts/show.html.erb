@@ -1,31 +1,43 @@
-<%= render 'layouts/navigation_bar' %>
-<p id="notice"><%= notice %></p>
+<h2>Showing post</h2>
 
+<nav>
+<div class="wrapper">
+    <ul class="menu" rel="sam1">
+        <li class="item"> <%= link_to 'Edit', edit_post_path(@post) %> </li>
+        <li class="item"> <%= link_to 'Back', posts_path %> </li>
+    </ul>    
+</div>
+</nav>
+
+<p id="notice"><%= notice %></p>
+<div>
 <p>
   <b>Author:</b>
   <%= @post.author %>
 </p>
-
+</div>
+<div>
 <p>
   <b>Title:</b>
   <%= @post.title %>
 </p>
-
+</div>
+<div>
 <p>
   <b>Body:</b>
   <%= @post.body %>
 </p>
-
+</div>
+<div>
 <p>
   <b>Published at:</b>
   <%= @post.published_at %>
 </p>
-
+</div>
+<div>
 <p>
   <b>Featured:</b>
   <%= @post.featured %>
 </p>
+</div>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
