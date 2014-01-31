@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   
   def home
-    @post = Post.featured.last
+    @post = Post.featured
+    @post = Post.featured.first
   end
 
   def about

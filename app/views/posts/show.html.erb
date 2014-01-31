@@ -15,29 +15,38 @@
   <b>Author:</b>
   <%= @post.author %>
 </p>
-</div>
-<div>
+<hr>
 <p>
   <b>Title:</b>
   <%= @post.title %>
 </p>
-</div>
-<div>
+<hr>
 <p>
   <b>Body:</b>
   <%= @post.body %>
 </p>
-</div>
-<div>
+<hr>
 <p>
   <b>Published at:</b>
   <%= @post.published_at %>
 </p>
-</div>
-<div>
+<hr>
 <p>
   <b>Featured:</b>
   <%= @post.featured %>
 </p>
+</div>
+
+<h2 >Add a comment</h2>
+
+<div>
+<h3>Comments (<%= @post.comments.count %>)</h3>
+<% @post.comments.each do |comment| %>
+<hr>
+  <h4><em><%= comment.author %></em> |
+    <small> <%= time_tag(comment.created_at) if comment.created_at %> </small>
+  </h4>
+<%= simple_format(comment.message) %>
+<% end %>
 </div>
 

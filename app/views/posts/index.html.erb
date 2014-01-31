@@ -13,10 +13,7 @@
 
 <div class="post">
     <h1> <%= post.title %> </h1>
-    <%= post.author %>
-    <br>  
-    <%= post.published_at %>
-    <br>
+    <p><em><%= post.author %></em> | <%= post.published_at %></p>
     <%= post.body %>
     <br>
     Featured: <%= post.featured %>
