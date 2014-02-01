@@ -37,16 +37,16 @@
 </p>
 </div>
 
-<h2 >Add a comment</h2>
-
 <div>
-<h3>Comments (<%= @post.comments.count %>)</h3>
-<% @post.comments.each do |comment| %>
-<hr>
-  <h4><em><%= comment.author %></em> |
-    <small> <%= time_tag(comment.created_at) if comment.created_at %> </small>
-  </h4>
-<%= simple_format(comment.message) %>
-<% end %>
+  <h3>Comments (<%= @post.comments.count %>)</h3>
+  <% @post.comments.each do |comment| %>
+    <hr>
+    <h4><em><%= comment.author %></em> |
+      <small> <%= time_tag(comment.created_at) if comment.created_at %> </small>
+    </h4>
+    <%= simple_format(comment.message) %>
+  <% end %>
 </div>
 
+<h2>Add a comment</h2>
+<%= render 'posts/comment_display' %>

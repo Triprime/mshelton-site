@@ -3,10 +3,12 @@ MsheltonSite::Application.routes.draw do
   #get | post | put | patch | delete
 
   root to: "static_pages#home"
-  resources :posts 
   # do
   #   post 'comment', to: "posts#create_comment", as: comments
   # end
+  resources :posts do 
+    post 'comments', to: "post#create_comment", as: :comments
+  end
 
   #get "/url-path", to: "controller#action", as: :url_path_name"
   #this is Rails 3 syntax only

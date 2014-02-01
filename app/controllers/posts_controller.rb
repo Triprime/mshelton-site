@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    # @comments = @post.comments
     @comment = @post.comments.new
 
     respond_to do |format|
@@ -82,4 +81,21 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def create_comment
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(params[:comment])
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @post, notice: 'Comment was successfully created.' }
+        format.json { render json: @post, status: :created, location: @post }
+      else
+        format.html { render action: "show" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 end
+
