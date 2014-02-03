@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController
+Prclass StaticPagesController < ApplicationController
   
   def home
     @post = Post.featured

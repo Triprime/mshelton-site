@@ -7,7 +7,7 @@ MsheltonSite::Application.routes.draw do
   #   post 'comment', to: "posts#create_comment", as: comments
   # end
   resources :posts do 
-    post 'comments', to: "post#create_comment", as: :comments
+    post 'comments', to: "posts#create_comment", as: :comments
   end
 
   #get "/url-path", to: "controller#action", as: :url_path_name"
