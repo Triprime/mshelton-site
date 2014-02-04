@@ -28,7 +28,7 @@
 <hr>
 <p>
   <b>Published at:</b>
-  <%= @post.published_at %>
+  <%= time_tag(@post.published_at) %>
 </p>
 <hr>
 <p>
@@ -40,11 +40,14 @@
 <div>
   <h3>Comments (<%= @post.comments.count %>)</h3>
   <% @post.comments.each do |comment| %>
-    <hr>
-    <h4><em><%= comment.author %></em> |
-      <small> <%= time_tag(comment.created_at) if comment.created_at %> </small>
-    </h4>
-    <%= simple_format(comment.message) %>
+    <% unless comment.new_record? %>
+      <hr>
+      <h4>
+        <em><%= comment.author %></em> |
+        <small> <%= time_tag(comment.created_at)  %> </small>
+      </h4>
+      <%= simple_format(comment.message) %>
+    <% end %>
   <% end %>
 </div>
 
