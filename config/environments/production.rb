@@ -16,6 +16,7 @@ MsheltonSite::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
+    # set to true when running server for production 
 
   # Generate digests for assets URLs
   config.assets.digest = true

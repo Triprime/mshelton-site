@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(:version => 20140130233742) do
     t.string   "title"
     t.text     "body"
     t.datetime "published_at"
-    t.boolean  "featured"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.boolean  "featured",     :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
 end
