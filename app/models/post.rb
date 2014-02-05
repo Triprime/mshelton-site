@@ -15,14 +15,14 @@ class Post < ActiveRecord::Base
 
   
   # this validation breaks the app...
-  validate :published_at_is_future, on: :create
+  # validate :published_at_is_future, on: :create
 
-  private
+  # private
   
-  def published_at_is_future
-    unless published_at >= Time.now  
-      errors.add(:published_at, "Published at date must be future.")  
-    end
-  end
+  # def published_at_is_future
+  #   unless published_at >= Time.now  
+  #     errors.add(:published_at, "Published at date must be future.")  
+  #   end
+  # end
 
 end
