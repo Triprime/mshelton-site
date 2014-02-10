@@ -1,21 +1,33 @@
 MsheltonSite::Application.routes.draw do
 
-  #get | post | put | patch | delete
-
   root to: "static_pages#home"
-  # do
-  #   post 'comment', to: "posts#create_comment", as: comments
-  # end
-  resources :posts do 
-    post 'comments', to: "posts#create_comment", as: :comments
-  end
+
+  # get | post | put | patch | delete
 
   #get "/url-path", to: "controller#action", as: :url_path_name"
   #this is Rails 3 syntax only
+
+  # User routes
+  resources :users
+  get "/sign-up", to: "users#new", as: :sign_up
+
+  # Session routes
+  get "/sign-in", to: "sessions#new", as: :sign_in
+  post "/sign-in", to: "sessions#create", as: :create_session
+  delete "/sign-out", to: "sessions#destroy", as: :sign_out
+
+  # Static_pages routes
   get "/home", to: "static_pages#home", as: :home
   get "/about", to: "static_pages#about", as: :about
   get "/gallery", to: "static_pages#gallery", as: :gallery
+
+  # Posts routes
   get "/posts", to: "posts#index", as: :posts
+
+  # Comments routes
+  resources :posts do 
+    post 'comments', to: "posts#create_comment", as: :comments
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
