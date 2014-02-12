@@ -1,0 +1,21 @@
+// overriding vars
+$well-bg: darkgray;
+
+$headings-font-family: 'Fauna One', serif;
+$font-family-base: 'Carme', sans-serif;
+$brand-primary: #BCF5BC; //light green
+$font-size-base: 16px;
+
+$link-color: #8b0000;
+$link-hover-color: darken(#BCF5BC, 15%);
+$btn-primary-color: #8b0000;
+
+$navbar-default-link-color: #8b0000; // darkred
+$navbar-default-link-hover-color: darken(#BCF5BC, 15%);
+$navbar-default-bg: darkgray;
+
+
+// css framework import
+@import "bootstrap";
+
+// custom css definitions

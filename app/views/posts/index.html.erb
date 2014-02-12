@@ -1,28 +1,29 @@
-<h2>My amazing blog!</h2>
-
-<nav>
-<div class="wrapper">
-    <ul class="menu" rel="sam1">
-        <li class="item"> <%= link_to 'New Post', new_post_path %> </li>
-    </ul>    
+<div class="page-header">
+  <h1>My amazing blog!
+    <div class="pull-right">
+      <%= link_to 'New Post', new_post_path, class: "btn btn-primary btn-sm" %>     
+    </div>
+  </h1>
 </div>
-</nav>
 
 
 <% @posts.each do |post| %>
+  <div class = "well">
+    <div class="post">
+      <div class="pull-right">
+        <%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary btn-sm"%>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-primary btn-sm" %>
+      </div>
 
-<div class="post">
-    <h1> <%= post.title %> </h1>
-    <p><em><%= post.author %></em> | <%= post.published_at %></p>
-    <%= post.body %>
-    <br>
-    Featured: <%= post.featured %>
-    <br>
-    <%= link_to 'Show', post %>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <br><br>
-</div>
+      <h2> <%= post.title %> </h2>
+      <p><em><%= post.author %></em> | <%= time_tag(post.published_at) %></p>
+
+      <p><%= post.body %></p>
+  
+      <!-- Featured: <%= post.featured %> -->
+      <!-- link_to 'Show', post, class: "btn btn-primary btn-sm" %> -->
+    </div>
+  </div>
 <% end %>
 
 

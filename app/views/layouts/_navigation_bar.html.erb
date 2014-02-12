@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
 <div class="wrapper">
   <ul class="menu" rel="sam1">
     <li class="item"><%= link_to "Home", home_path %></li>
@@ -13,4 +13,49 @@
     <% end %> 
   </ul>
 </div>
+</nav> -->
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Matt's site</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Posts", posts_path %></li>
+        <li><%= link_to "About Me", about_path %></li>
+        <li><%= link_to "Gallery", gallery_path %></li>
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to [current_user.first_name, current_user.last_name].join(' '), edit_user_path(current_user) %></li>
+          <li><%= link_to "Sign Out", sign_out_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", sign_up_path %></li> 
+          <li><%= link_to "Sign In", sign_in_path %></li>
+        <% end %>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
