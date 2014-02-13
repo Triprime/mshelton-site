@@ -12,18 +12,21 @@
   </head>
 
   <body>
-   <div class="container"> 
-    <%= render 'layouts/navigation_bar' %>
+    <div class="container"> 
+      <%= render 'layouts/navigation_bar' %>
 
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-    <% end %>
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? 'success' : 'danger' %> alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>       
+          <%= msg %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <footer>
-      <p class="footer">&copy;<%= Time.now.year %>, Matt Shelton | <em><%= Rails.env %></em></p>
-    </footer>
-  </div> 
+      <footer>
+        <p class="footer">&copy;<%= Time.now.year %>, Matt Shelton | <em><%= Rails.env %></em></p>
+      </footer>
+    </div> 
   </body>
 </html>

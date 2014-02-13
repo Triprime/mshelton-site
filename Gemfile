@@ -7,6 +7,7 @@ gem 'rails', '3.2.16'
 
 
 gem 'pg'
+gem 'simple_form'
 
 group :development do
   gem "pry-rails"
@@ -19,6 +20,7 @@ group :development do
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-pow', require: false
+
 end
 
 # Gems used only for assets and not required
