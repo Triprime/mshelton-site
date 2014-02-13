@@ -15,6 +15,10 @@ group :development do
   gem "binding_of_caller"
   gem 'meta_request'
   gem 'xray-rails'
+  gem 'rack-livereload'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-pow', require: false
 end
 
 # Gems used only for assets and not required
