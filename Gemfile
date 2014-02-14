@@ -20,7 +20,7 @@ group :development do
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-pow', require: false
-
+  gem "letter_opener"
 end
 
 # Gems used only for assets and not required
