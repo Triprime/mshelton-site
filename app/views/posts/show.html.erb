@@ -7,8 +7,6 @@
   </h1>
 </div>
 
-
-
 <p id="notice"><%= notice %></p>
 
 <p><b>Author:</b><%= @post.author %></p>
@@ -35,5 +33,6 @@
   <% end %>
 </div>
 
-<h2>Add a comment</h2>
-<%= render 'posts/comment_display' %>
+<div>
+  <h2>Add a comment</h2>
+  <%= render 'posts/comment_display' %>
