@@ -1,6 +1,6 @@
 <%= simple_form_for(@comment, url: post_comments_path(@post)) do |f| %>
   <%= f.error_notification %>
   <%= f.input :author %>
-  <%= f.input :message %>
+  <%= f.input :message, input_html: {rows: 5} %>
   <%= f.button :submit, class: "btn btn-primary btn-lg" %>
 <% end %>

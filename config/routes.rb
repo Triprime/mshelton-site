@@ -11,6 +11,10 @@ MsheltonSite::Application.routes.draw do
   resources :users
   get "/sign-up", to: "users#new", as: :sign_up
 
+  # Contact_message routes
+  get "/contact", to: "contact_messages#new", as: :new_contact
+  post "/contact", to: "contact_messages#create", as: :new_contact
+
   # Session routes
   get "/sign-in", to: "sessions#new", as: :sign_in
   post "/sign-in", to: "sessions#create", as: :create_session

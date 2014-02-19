@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
               uniqueness: true
 
   
-  # this validation breaks the app...
+  # this validation is broken...
   # validate :published_at_is_future, on: :create
 
   # private

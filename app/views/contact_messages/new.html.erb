@@ -1,0 +1,10 @@
+<%= simple_form_for(@contact_message, 
+  url: new_contact_path(@contact_message)) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :email, as: :email %>
+  <%= f.input :subject %>
+  <!-- f.input :topic, collection: ["Topic 1", "Topic 2", "Topic 3"], include_blank: false %> -->
+  <%= f.input :body, input_html: { rows: 5 } %>
+  <%= f.button :submit, "Send Email", class: "btn btn-primary btn-lg" %>
+<% end %>
