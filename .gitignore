@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore assets to keep git repo lean
-/public/assets
+/public/assets.powenv
