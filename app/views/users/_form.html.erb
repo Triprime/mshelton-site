@@ -1,9 +1,16 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
+  <%= image_tag( @user.profile_picture.url(:small) ) %>
   <%= f.input :email %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
+
+  <% if controller.action_name == 'new' || controller.action_name == 'create' %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
+
+  <%= f.input :profile_picture %>
+
   <%= f.button :submit, class: "btn btn-primary btn-lg" %>
 <% end %>

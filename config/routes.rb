@@ -1,5 +1,8 @@
 MsheltonSite::Application.routes.draw do
 
+  resources :projects
+
+
   root to: "static_pages#home"
 
   # get | post | put | patch | delete

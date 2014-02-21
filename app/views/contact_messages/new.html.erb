@@ -5,6 +5,6 @@
   <%= f.input :email, as: :email %>
   <%= f.input :subject %>
   <!-- f.input :topic, collection: ["Topic 1", "Topic 2", "Topic 3"], include_blank: false %> -->
-  <%= f.input :body, input_html: { rows: 5 } %>
+  <%= f.input :body, as: :text, input_html: { rows: 5 } %>
   <%= f.button :submit, "Send Email", class: "btn btn-primary btn-lg" %>
 <% end %>

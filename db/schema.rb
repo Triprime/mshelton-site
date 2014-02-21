@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140219002608) do
+ActiveRecord::Schema.define(:version => 20140221023450) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -42,13 +42,30 @@ ActiveRecord::Schema.define(:version => 20140219002608) do
     t.datetime "updated_at",                      :null => false
   end
 
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "website_url"
+    t.string   "github_url"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "screen_shot_file_name"
+    t.string   "screen_shot_content_type"
+    t.integer  "screen_shot_file_size"
+    t.datetime "screen_shot_updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "password_digest"
+    t.string   "profile_picture_file_name"
+    t.string   "profile_picture_content_type"
+    t.integer  "profile_picture_file_size"
+    t.datetime "profile_picture_updated_at"
   end
 
 end
