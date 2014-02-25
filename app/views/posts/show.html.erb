@@ -11,7 +11,14 @@
 
 <p><b>Author:</b><%= @post.author %></p>
 
-<p><b>Title:</b><%= @post.title %></p>
+<p><b>Title:</b><%= @post.title %> 
+  <% if post.tags.any? %>
+    <% post.tags.each do |tag| %>
+      <small>#<%= tag.name %></small>
+    <% end %>
+  <% end %>
+</p>
+
 
 <p><b>Body:</b><%= @post.body %></p>
 

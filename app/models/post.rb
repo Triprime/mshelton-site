@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
-
+  has_many :tags, as: :taggable
+  
   scope :featured, -> { where(featured: true) }
   scope :published, -> { where("published_at <= ?", Time.now).order("published_at DESC") }
   default_scope -> { where("published_at <= ?", Time.now).order("published_at DESC") }
