@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @project.tags.build
+    @project.pics.build
 
     respond_to do |format|
       format.html # new.html.erb

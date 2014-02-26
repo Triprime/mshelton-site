@@ -5,19 +5,41 @@
     <%= f.input :title %>
     <%= f.input :description, input_html: { rows: 5 } %>
     <%= f.input :website_url %>
-    <%= f.input :github_url %>
+    <!--%= f.input :github_url %-->
   </div>
 
- 
-  <%= f.simple_fields_for :tags do |tag| %>
-    <%= tag.input :name, label: 'Tag' %>
-  <% end %>
+  <!-- non cocoon tag functionality -->
+  <!--%= f.simple_fields_for :tags do |tag| %-->
+    <!--%= tag.input :name, label: 'Tag' %-->
+  <!--% end %-->
 
-  <!-- add cocoon functionality to allow multiple tags on single form -->
-  <!-- <div class='links'> -->
+  <!-- cocoon functionality to allow multiple tags on single form -->
+  <div class="row">
+    <h3>Tags</h3> 
+    <div id="#tags">
+      <%= f.simple_fields_for :tags do |tag| %>
+        <%= render 'tag_fields', :f => tag %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add tag', f, :tags %>
+      </div>    
+    </div>
+  </div>
 
+  <div class="row">
+    <h3>Pics</h3> 
+    <div id="#pics">
+      <%= f.simple_fields_for :pics do |pic| %>
+        <%= render 'pic_fields', :f => pic %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add pic', f, :pics %>
+      </div>  
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
 <% end %>

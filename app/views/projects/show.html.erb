@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
+<%= display_pics(@project) %>
+<%= display_tags(@project) %>
 
-<p>
-  <%= display_tags(@project) %>
+<p> 
   <b>Title:</b>
   <%= @project.title %>
 </p>
@@ -16,10 +17,10 @@
   <%= @project.website_url %>
 </p>
 
-<p>
+<!-- <p>
   <b>Github url:</b>
-  <%= @project.github_url %>
-</p>
+  <%#= @project.github_url %>
+</p> -->
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
