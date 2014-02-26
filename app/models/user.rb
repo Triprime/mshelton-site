@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :tags, as: :taggable
   
   attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :profile_picture
 
@@ -8,7 +7,7 @@ class User < ActiveRecord::Base
     styles: { large: "600x600>", 
               medium: "300x300>", 
               small: "100x100>", 
-              tiny: "15x15>" 
+              tiny: "25x25>" 
             },
     :default_url => "assets/:attachment/:style.png"
 

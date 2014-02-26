@@ -3,10 +3,19 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :description %>
+    <%= f.input :description, input_html: { rows: 5 } %>
     <%= f.input :website_url %>
     <%= f.input :github_url %>
   </div>
+
+ 
+  <%= f.simple_fields_for :tags do |tag| %>
+    <%= tag.input :name, label: 'Tag' %>
+  <% end %>
+
+  <!-- add cocoon functionality to allow multiple tags on single form -->
+  <!-- <div class='links'> -->
+
 
   <div class="form-actions">
     <%= f.button :submit %>

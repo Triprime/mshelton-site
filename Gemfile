@@ -8,6 +8,7 @@ gem 'rails', '3.2.16'
 gem "paperclip", "~> 3.0"
 gem 'pg'
 gem 'simple_form'
+gem 'cocoon'
 
 group :development do
   gem "pry-rails"

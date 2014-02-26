@@ -1,10 +1,11 @@
 <div class='row'>
   <div class='col-sm-8 col-sm-offset-2'> 
+    
     <%= simple_form_for(@post) do |f| %>
       <%= f.error_notification %>
-      <%= f.input :author, placefolder: "Author name" %>
-      <%= f.input :title, placefolder: "Title" %>
-      <%= f.input :body, placefolder: "Body" %>
+      <%= f.input :author, placeholder: "Author name" %>
+      <%= f.input :title, placeholder: "Title" %>
+      <%= f.input :body, placeholder: "Body", input_html: { rows: 5 } %>
 
         <div class='col-sm-4 col-sm-offset-4'>
           <%= f.input :published_at %>
