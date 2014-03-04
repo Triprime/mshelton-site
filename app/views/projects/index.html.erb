@@ -1,29 +1,20 @@
-<h1>My Portfolio</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Website url</th>
-    <!-- <th>Github url</th> -->
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class='page-header text-center'>
+  <h1> My Portfolio</h1>
+</div>
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= project.description %></td>
-    <td><%= project.website_url %></td>
-    <!-- <td><%= project.github_url %></td> -->
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+  <div class='col-md-3 col-sm-4 col-xs-6 gutter'>
+    <% if project.pics.first %>
+    <%= link_to "#", data: { toggle: 'modal', target: "#project-#{ project.id }"}, class: "thumbnail-links" do %>
+      <div class='project-overlay'>
+        <h5> <%=project.title %></h5>
+        <p> <i class='glyphicon glyphicon-search'></i>View project</p>
+      </div>
+      <%= image_tag(project.pics.first.image.url(:medium), class: 'img-responsive') %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render 'projects/modal', project: project %>
+
+
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project', new_project_path %>

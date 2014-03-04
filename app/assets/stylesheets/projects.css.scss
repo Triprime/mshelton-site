@@ -1,3 +1,31 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gutter{
+  padding: 15px;
+}
+
+.gallery-item{
+  cursor: pointer;
+}
+.project-overlay{
+  display: none;
+  position: relative;
+  width: auto;
+  z-index: 2;
+  height: 120px;
+  margin: 10px 0 -130px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: #1d1d1d;
+  opacity: 0.9;
+  h5{
+
+    color: white;
+  }
+  p{
+    color: lime;
+  }
+}

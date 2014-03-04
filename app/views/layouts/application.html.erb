@@ -25,7 +25,10 @@
       <%= yield %>
 
       <footer>
-        <p class="footer">&copy;<%= Time.now.year %>, Matt Shelton | <em><%= Rails.env %></em></p>
+        <div class='clearfix'></div>
+        <div class'well'>
+          <p class="footer">&copy;<%= Time.now.year %>, Matt Shelton | <em><%= Rails.env %></em></p>
+        </div>
       </footer>
     </div> 
   </body>
