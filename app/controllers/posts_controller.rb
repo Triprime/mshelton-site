@@ -90,10 +90,23 @@ class PostsController < ApplicationController
       if @comment.save
         format.html { redirect_to @post, notice: 'Comment was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
+        format.js
       else
         format.html { render action: "show" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy_comment
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:comment_id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to post_path(@post), notice: "Comment deleted" }
+      format.json { head :no_content }
+      format.js
     end
   end
 

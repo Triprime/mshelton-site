@@ -34,6 +34,7 @@ MsheltonSite::Application.routes.draw do
   # Comments routes
   resources :posts do 
     post 'comments', to: "posts#create_comment", as: :comments
+    delete 'comments/:comment_id', to: "posts#destroy_comment", as: :destroy_comment
   end
   
   # The priority is based upon order of creation:

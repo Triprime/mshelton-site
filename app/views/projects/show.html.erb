@@ -1,40 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<div class='row'>
-<% if @project.pics.any? %>
-  <% @project.pics.each do |pic| %>
-    <div class='col-sm-3'>
-      <div class='thumbnail'>
-        <%= image_tag(pic.image.url(:medium), class: 'img-responsive img-thumbnail', alt: pic.name) %>
-        <span> <%= pic.name %></span>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<div class='page-header'>
+  <h1> <%= @project.title %> </h1>
 </div>
 
-<%= display_tags(@project) %>
+<%= render 'projects/project_body', project: @project %>
 
-<p> 
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
-<p>
-  <b>Website url:</b>
-  <%= @project.website_url %>
-</p>
-
-<!-- <p>
-  <b>Github url:</b>
-  <%#= @project.github_url %>
-</p> -->
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class='clearfix'></div>

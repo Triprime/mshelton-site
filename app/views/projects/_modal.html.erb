@@ -3,35 +3,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><%= project.title %></h4>
+        <!-- <h4 class="modal-title" id="myModalLabel"><%= project.title %></h4> -->
+        <h4 class="modal-title" id="myModalLabel"><%= link_to project.title, project_path(project)  %></h4>
       </div>
       <div class="modal-body">
-        <div class='col-sm-6 media-items'>
-          <p class='text-center'><%= image_tag(project.pics.first.image.url(:large), class: 'img-responsive img-thumbnail main-gallery-image')%>
-            <br />
-            <%= link_to "View High Resolution image", "#{project.pics.first.image.url(:original)}", target: "_blank", class: "high-res-image" %>
-          </p>
-          <div class='margin-horizontal-10'>
-            <% project.pics.each do |pic| %>
-              <div class='col-md-4 col-xs-6'>
-                <p class='text-center'>
-                  <%= image_tag(pic.image.url(:small), class: 'img-responsive img-thumbnail gallery-item', data: {img_lg: "#{pic.image.url(:large)}", img_original: "#{pic.image.url(:original)}"  } )%>
-                </p>
-              </div>
-            <% end %>
-          </div>
-          <div class='clearfix'></div>
-          <hr />
-          <p> <%= display_tags(project) %> </p>
-          <div class='clearfix'></div>
-        </div>
-        <div class='col-sm-6'>       
-          <%= simple_format project.description %>
-          <% if project.website_url %>
-            <p><%= link_to "View Project", project.website_url, target: "_blank" %></p>
-          <% end %>
-        </div>
 
+        <%= render 'projects/project_body', project: project %>
+      
       </div>
       <div class='clearfix'></div>
       <div class="modal-footer">

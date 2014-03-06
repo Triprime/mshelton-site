@@ -9,28 +9,16 @@
 
 <p id="notice"><%= notice %></p>
 
-<p><b>Author:</b><%= @post.author %></p>
+<%= render 'posts/post_display', post: @post %>
 
-<p><b>Body:</b><%= @post.body %></p>
-
-<p><b>Published at:</b><%= time_tag(@post.published_at) %></p>
-
-<p><b>Featured:</b><%= @post.featured %></p>
-
-<div>
-  <h2>Comments (<%= @post.comments.count %>)</h2>
+<div class='comments-list'>
   <% @post.comments.each do |comment| %>
     <% unless comment.new_record? %>
-      <hr>
-      <h4>
-        <em><%= comment.author %></em> |
-        <small> <%= time_tag(comment.created_at) %> </small>
-      </h4>
-      <%= simple_format(comment.message) %>
+      <%= render 'posts/show_comment', comment: comment %>
     <% end %>
   <% end %>
 </div>
-
-<div>
-  <h2>Add a comment</h2>
+<div class='add-comment'>
+  <h3> Add a comment</h3>
   <%= render 'posts/comment_display' %>
+</div>
