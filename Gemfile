@@ -10,6 +10,10 @@ gem 'pg'
 gem 'simple_form'
 gem 'cocoon'
 
+group :develompent, :test do
+  gem "minitest-rails", github: "blowmage/minitest-rails"
+end
+
 group :development do
   gem "pry-rails"
   gem 'sqlite3'
