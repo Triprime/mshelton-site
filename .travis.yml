@@ -1,3 +1,16 @@
 language: ruby
 rvm:
   - 2.0.0
+
+env:
+- SECRET_TOKEN=87acf40dced1766b06e182af54bfbc970c8868e7bafd3809aa329c96ef814612076826b30b276c8e2d5a629b1fb09010a359e9c88e10db37c0aca1d82d685915
+bundler_args: --without development production
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database mshelton_site_test' -U postgres
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
