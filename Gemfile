@@ -12,6 +12,8 @@ gem 'cocoon'
 
 group :develompent, :test do
   gem "minitest-rails", github: "blowmage/minitest-rails"
+  gem 'factory_girl_rails'
+  gem "ffaker"
 end
 
 group :development do
