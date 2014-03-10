@@ -9,6 +9,7 @@ gem "paperclip", "~> 3.0"
 gem 'pg'
 gem 'simple_form'
 gem 'cocoon'
+gem "figaro"
 
 group :develompent, :test do
   gem "minitest-rails", github: "blowmage/minitest-rails"

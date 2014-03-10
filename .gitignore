@@ -17,3 +17,6 @@
 # Ignore assets to keep git repo lean
 /public/assets.powenv
 
+
+# Ignore application configuration
+/config/application.yml

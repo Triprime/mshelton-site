@@ -6,7 +6,7 @@ class ContactMailer < ActionMailer::Base
     # @message = ContactMessage.find(message)
     @message = message
 
-    mail( to: "shelton_matthew@hotmail.com", 
+    mail( to: "me@mail.com", 
           subject: "#{@message.name} | #{@message.subject}", 
           from: "#{@message.email}"
           )
